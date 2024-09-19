@@ -2254,10 +2254,16 @@
     --tw-text-opacity: 1;
     color: rgb(174 183 192 / var(--tw-text-opacity));
   }
-  /* .text-bodydark1{
-      --tw-text-opacity: 1;
-      color: rgb(28 36 52);
-  } */
+  .text-bodydark1{
+    --tw-text-opacity: 1;
+    color: rgb(28 36 52);
+  }
+
+  .text-bodydark2{
+    --tw-text-opacity: 1;
+    color: rgb(141, 165, 213);
+  }
+
   .text-bodydark2{
     --tw-text-opacity: 1;
     color: rgb(138 153 175 / var(--tw-text-opacity));

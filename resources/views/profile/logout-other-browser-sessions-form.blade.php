@@ -1,10 +1,14 @@
 <x-action-section>
     <x-slot name="title">
-        {{ __('Browser Sessions') }}
+        <div class="text-black dark:text-white">
+            {{ __('Browser Sessions') }}
+        </div>
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Manage and log out your active sessions on other browsers and devices.') }}
+        <div class="text-black dark:text-white">
+            {{ __('Manage and log out your active sessions on other browsers and devices.') }}
+        </div>
     </x-slot>
 
     <x-slot name="content">
