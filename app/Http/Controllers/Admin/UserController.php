@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    protected $users;
+    public function __construct(User $user)
+    {
+        $this->users = $user;
+    }
     public function index()
     {
-        //
+        $users = $this->users()->all();
+        return $users;
+        // return view ('')
     }
 
     /**
