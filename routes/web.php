@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -16,5 +15,5 @@ Route::middleware([ 'auth:sanctum',  config(key: 'jetstream.auth_session'),'veri
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']],function() {
     Route::resource('tasks','TaskController');
-    // Route::resource('users',UserController::class);
+    Route::resource('users','UserController');
 });
