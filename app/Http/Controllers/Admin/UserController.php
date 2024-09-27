@@ -15,10 +15,17 @@ class UserController extends Controller
     }
     public function index()
     {
-        $users = $this->users->get();
-        return view('admin.users.index',compact('users'));
-    }
+        $columns = [
+            ['label' => 'Name', 'field' => 'name'],
+            ['label' => 'Email', 'field' => 'email'],
+            ['label' => 'Created At', 'field' => 'created_at'],
+        ];
 
+        // Pass the query builder instead of paginated results
+        $dataModel = User::select('name', 'email', 'created_at')->get(); // array အဖြစ်ပြောင်းပါ
+
+        return view('admin.users.index', compact('columns', 'dataModel'));
+    }
     public function create()
     {
         return view('admin.users.create');
