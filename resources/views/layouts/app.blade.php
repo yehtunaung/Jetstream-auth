@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"  >
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" >
 
 <head>
     <meta charset="utf-8">
@@ -13,39 +13,36 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     <!-- Scripts -->
-
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="stylesheet" href="   {{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <!-- Styles -->
     @livewireStyles
 </head>
 
-    <body class="font-sans antialiased" x-data="{ page: 'ecommerce', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }" x-init="darkMode = JSON.parse(localStorage.getItem('darkMode'));
-    $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
-        :class="{ 'dark text-bodydark bg-boxdark-2': darkMode === true }">
-       
-        <!-- ===== Page Wrapper Start ===== -->
-        <div class="flex h-screen overflow-hidden">
+<body class="font-sans antialiased" x-data="{ page: 'ecommerce', loaded: true, darkMode: true, stickyMenu: false, sidebarToggle: false, scrollTop: false }"
+      x-init="darkMode = JSON.parse(localStorage.getItem('darkMode')); $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+      :class="{ 'dark text-bodydark bg-boxdark-2': darkMode === true }">
 
-            {{-- Side Bar start--}}
-            @include('partial/sidebar-menu')
-            {{-- Side Bar end --}}
+    <!-- Page Wrapper -->
+    <div class="flex h-screen overflow-hidden">
+        {{-- Side Bar --}}
+        @include('partial/sidebar-menu')
 
-            <!-- ===== Content Area Start ===== -->
-            <div class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
-                <!-- ===== Header Start ===== -->
-                @livewire('navigation-menu')
-                <!-- ===== Header End ===== -->
+        <!-- Content Area -->
+        <div class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
+            <!-- Header -->
+            @livewire('navigation-menu')
 
-                <!-- ===== Main Content Start ===== -->
-                {{ $slot }}
-                <!-- ===== Main Content End ===== -->
-            </div>
+            <!-- Main Content -->
+            {{ $slot }}
         </div>
-        @stack('modals')
+    </div>
 
-        @livewireScripts
-        {{-- <script src="{{ asset('js/bundle.js') }}"></script> --}}
-    </body>
+    <!-- Modals Stack -->
+    @stack('modals')
+
+    @livewireScripts
+    {{-- <script src="{{ asset('js/bundle.js') }}"></script> --}}
+</body>
 </html>
