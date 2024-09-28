@@ -21,9 +21,7 @@ class UserController extends Controller
             ['label' => 'Created At', 'field' => 'created_at'],
         ];
 
-        // Pass the query builder instead of paginated results
-        $dataModel = User::select('name', 'email', 'created_at')->get(); // array အဖြစ်ပြောင်းပါ
-
+        $dataModel = User::select('name', 'email', 'created_at')->get();
         return view('admin.users.index', compact('columns', 'dataModel'));
     }
     public function create()

@@ -28,6 +28,7 @@
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-black uppercase bg-white dark:bg-black dark:text-white">
                             <tr>
+                                {{-- @dd($items) --}}
                                 @foreach ($columns as $column)
                                     <th scope="col" class="px-4 py-3">{{ $column['label'] }}</th>
                                 @endforeach
