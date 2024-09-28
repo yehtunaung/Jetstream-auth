@@ -6,8 +6,8 @@
         </h2>
     </x-slot>
 
-    {{-- @livewire('table-component', ['columns' => $columns,'data' => $dataModel]) --}}
-    @livewire('table-component', ['columns' => json_encode($columns), 'data' => $dataModel])
+    @livewire('table-component', ['columns' => $columns,'data' => $dataModel])
+    {{-- @livewire('table-component', ['columns' => json_encode($columns), 'data' => $dataModel]) --}}
 
 
 </x-app-layout>

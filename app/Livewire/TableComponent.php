@@ -13,9 +13,8 @@ class TableComponent extends Component
 
     public function mount($columns, $data)
     {
-        // $this->columns = $columns;
-        $this->columns = json_decode($columns, true);
-
+        $this->columns = $columns;
+        // $this->columns = json_decode($columns, true);
         $this->data = $data; // Array type
     }
 
