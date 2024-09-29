@@ -486,7 +486,6 @@
   [type='reset'],
   [type='submit'] {
     -webkit-appearance: button; /* 1 */
-    background-color: transparent; /* 2 */
     background-image: none; /* 2 */
   }
   
@@ -3793,6 +3792,12 @@
     .\32xl\:px-7\.5{
       padding-left: 1.875rem;
       padding-right: 1.875rem;
+    }
+
+    .shadow-xl-cz{
+      --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / .1), 0 8px 10px -6px rgb(0 0 0 / .1);
+      --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+      box-shadow: 0 2px 8px 0 #161c31;
     }
   }
   
