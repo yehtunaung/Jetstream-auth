@@ -15,8 +15,8 @@ class UserController extends Controller
     }
     public function index()
     {
-        $users = $this->users->get();
-        return view('admin.users.index',compact('users'));
+        // $users = $this->users->paginate(50);
+        return view('admin.users.index');
     }
 
     public function create()

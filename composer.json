@@ -11,7 +11,8 @@
         "laravel/jetstream": "^4.3",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        "livewire/livewire": "^3.0"
+        "livewire/livewire": "^3.0",
+        "power-components/livewire-powergrid": "^5.10"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
