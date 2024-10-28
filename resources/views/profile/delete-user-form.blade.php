@@ -12,12 +12,12 @@
     </x-slot>
 
     <x-slot name="content">
-        <div class="max-w-xl text-sm text-gray-600">
+        <div class="max-w-xl text-sm text-black dark:text-white">
             {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.') }}
         </div>
 
         <div class="mt-5">
-            <x-danger-button wire:click="confirmUserDeletion" wire:loading.attr="disabled">
+            <x-danger-button wire:click="confirmUserDeletion" wire:loading.attr="disabled" class="text-white">
                 {{ __('Delete Account') }}
             </x-danger-button>
         </div>

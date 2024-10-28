@@ -2,17 +2,21 @@
     <!-- Generate API Token -->
     <x-form-section submit="createApiToken">
         <x-slot name="title">
-            {{ __('Create API Token') }}
+            <span class="text-black dark:text-white">
+                {{ __('Create API Token') }}
+            </span>
         </x-slot>
 
         <x-slot name="description">
-            {{ __('API tokens allow third-party services to authenticate with our application on your behalf.') }}
+            <span class="text-black dark:text-white">
+                {{ __('API tokens allow third-party services to authenticate with our application on your behalf.') }}
+            </span>
         </x-slot>
 
         <x-slot name="form">
             <!-- Token Name -->
             <div class="col-span-6 sm:col-span-4">
-                <x-label for="name" value="{{ __('Token Name') }}" />
+                <x-label for="name" value="{{ __('Token Name') }}" class="text-black dark:text-white" />
                 <x-input id="name" type="text" class="mt-1 block w-full" wire:model="createApiTokenForm.name" autofocus />
                 <x-input-error for="name" class="mt-2" />
             </div>
@@ -20,13 +24,13 @@
             <!-- Token Permissions -->
             @if (Laravel\Jetstream\Jetstream::hasPermissions())
                 <div class="col-span-6">
-                    <x-label for="permissions" value="{{ __('Permissions') }}" />
+                    <x-label for="permissions" value="{{ __('Permissions') }}" class="text-black dark:text-white" />
 
                     <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
                         @foreach (Laravel\Jetstream\Jetstream::$permissions as $permission)
                             <label class="flex items-center">
-                                <x-checkbox wire:model="createApiTokenForm.permissions" :value="$permission"/>
-                                <span class="ms-2 text-sm text-gray-600">{{ $permission }}</span>
+                                <x-checkbox wire:model="createApiTokenForm.permissions" :value="$permission" />
+                                <span class="ms-2 text-sm text-black dark:text-white" >{{ $permission }}</span>
                             </label>
                         @endforeach
                     </div>
@@ -52,11 +56,15 @@
         <div class="mt-10 sm:mt-0">
             <x-action-section>
                 <x-slot name="title">
-                    {{ __('Manage API Tokens') }}
+                    <span class="text-black dark:text-white">
+                        {{ __('Manage API Tokens') }}
+                    </span>
                 </x-slot>
 
                 <x-slot name="description">
-                    {{ __('You may delete any of your existing tokens if they are no longer needed.') }}
+                    <span class="text-black dark:text-white">
+                        {{ __('You may delete any of your existing tokens if they are no longer needed.') }}
+                    </span>
                 </x-slot>
 
                 <!-- API Token List -->
@@ -64,7 +72,7 @@
                     <div class="space-y-6">
                         @foreach ($this->user->tokens->sortBy('name') as $token)
                             <div class="flex items-center justify-between">
-                                <div class="break-all">
+                                <div class="break-all text-black dark:text-white">
                                     {{ $token->name }}
                                 </div>
 
@@ -96,11 +104,13 @@
     <!-- Token Value Modal -->
     <x-dialog-modal wire:model.live="displayingToken">
         <x-slot name="title">
-            {{ __('API Token') }}
+            <span class="text-black dark:text-white">
+                {{ __('API Token') }}
+            </span>
         </x-slot>
 
         <x-slot name="content">
-            <div>
+            <div class="text-black dark:text-white">
                 {{ __('Please copy your new API token. For your security, it won\'t be shown again.') }}
             </div>
 
